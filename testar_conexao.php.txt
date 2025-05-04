@@ -1,0 +1,22 @@
+<?php
+echo "<h2>Testador de Conexão com Banco de Dados</h2>";
+
+// Configurações
+$host = 'localhost';
+$db   = 'rua_solidaria';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
+
+// Tentativa de Conexão
+$mysqli = new mysqli($host, $user, $pass, $db);
+
+if ($mysqli->connect_errno) {
+    echo "<p style='color: red;'>❌ ERRO de conexão: " . $mysqli->connect_error . "</p>";
+} else {
+    echo "<p style='color: green;'>✅ Conexão com o banco de dados foi estabelecida com sucesso!</p>";
+}
+
+// Encerrar conexão
+$mysqli->close();
+?>
